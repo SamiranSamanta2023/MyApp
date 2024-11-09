@@ -1,3 +1,4 @@
+// models/user.js
 const bcrypt = require('bcryptjs');
 const { poolConnect } = require('../config/db');
 
