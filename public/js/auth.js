@@ -1,3 +1,4 @@
+// public/js/auth.js
 // Handle signup
 document.getElementById('signup-form')?.addEventListener('submit', async (event) => {
     event.preventDefault();
