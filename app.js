@@ -1,12 +1,17 @@
-// app.js
 const express = require('express');
-const authRoutes = require('./routes/authRoutes');
+const path = require('path');  // for file paths
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 
-app.use('/auth', authRoutes);
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Route to serve the index.html file when accessing '/'
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
